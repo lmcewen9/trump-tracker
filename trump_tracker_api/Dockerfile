@@ -1,4 +1,4 @@
-FROM --platform=linux/arm python:3.11 as build
+FROM python:3.11
 MAINTAINER Luke McEwen
 
 ADD . .
