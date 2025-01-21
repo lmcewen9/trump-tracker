@@ -25,7 +25,7 @@ jobs:
     - name: Build and Push
       uses: docker/build-push-action@v3
       with:
-        context: ./trump-tracker-api
+        context: ./trump_tracker_api
         file: ./trump-tracker-api/Dockerfile
         push: true
         tags: ${{secrets.REGISTRY_USERNAME}}/trump_tracker_api:latest
