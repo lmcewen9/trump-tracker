@@ -1,4 +1,4 @@
-FROM --platform=linux/armv7 python:3.11 as build
+FROM --platform=linux/arm/v5 python:3.11 as build
 MAINTAINER Luke McEwen
 
 RUN mkdir /app
