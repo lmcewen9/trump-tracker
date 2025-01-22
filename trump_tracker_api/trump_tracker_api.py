@@ -21,7 +21,7 @@ class Track(db.Model):
     favorable = db.Column(db.Float, nullable=False)
     unfavorable = db.Column(db.Float, nullable=False)
     eggs = db.Column(db.Float, nullable=False)
-    gas = db.Column(db.FLoat, nullable=False)
+    gas = db.Column(db.Float, nullable=False)
 
     def to_dict(self):
         return {"id": self.id, "date": self.date, "favorable": self.favorable, "unfavorable": self.unfavorable, "eggs": self.eggs, "gas": self.gas}
