@@ -42,7 +42,7 @@ def create_track():
 
 if __name__ == "__main__":
     with app.app_context():
-        if not db.engine.has_table('track'):
+        if not db.inspect(db.engine).has_table('track'):
             db.create_all()
     from waitress import serve
     serve(app, host="0.0.0.0", port=5000)
