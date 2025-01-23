@@ -16,17 +16,41 @@ async function createGraph(){
 
     console.log(data);
 
-    const labels = data.map(item => new Date(item.date).toLocaleDateString());
-    const values = data.map(item => item.eggs);
+    const x_axis = data.map(item => new Date(item.date).toLocaleDateString());
+    const favorable = data.map(item => item.favorable);
+    const unfavorable = data.map(item => item.unfavorable);
+    const eggs = data.map(item => item.eggs);
+    const gas = data.map(item => item.gas);
 
     const ctx = document.getElementById('myChart').getContext('2d');
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: labels,
+            labels: x_axis,
             datasets: [{
-                label: 'Trump Dataset',
-                data: values,
+                label: 'Favorable Percent',
+                data: favorable,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Unfavorable Percent',
+                data: unfavorable,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Egg Price',
+                data: eggs,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Gas Price',
+                data: gas,
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1

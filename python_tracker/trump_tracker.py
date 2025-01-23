@@ -11,7 +11,7 @@ def grap_favorable():
     return polls
 
 def grab_commodities(url):
-    req = requests.get("https://fred.stlouisfed.org/series/APU000074714").text
+    req = requests.get(url).text
     soup = BeautifulSoup(req, "html.parser")
     price = soup.find(class_="series-meta-observation-value").text
     return price
