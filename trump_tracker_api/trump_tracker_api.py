@@ -26,10 +26,13 @@ class Track(db.Model):
     def to_dict(self):
         return {"id": self.id, "date": self.date, "favorable": self.favorable, "unfavorable": self.unfavorable, "eggs": self.eggs, "gas": self.gas}
 
+    # object = {"data" : [to_dict]}
 @app.route('/track', methods=['GET'])
 def get_track():
     tracks = Track.query.all()
-    return jsonify([track.to_dict() for track in tracks])
+    response = jsonify([track.to_dict() for track in tracks])
+    response.headers.add("Access0Control-Allow-Origin", "*")
+    return response
 
 @app.route('/track', methods=['POST'])
 def create_track():
