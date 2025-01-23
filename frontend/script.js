@@ -30,29 +30,29 @@ async function createGraph(){
             datasets: [{
                 label: 'Favorable Percent',
                 data: favorable,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(255, 0, 0, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 1)',
                 borderWidth: 1
             },
             {
                 label: 'Unfavorable Percent',
                 data: unfavorable,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(0, 255, 0, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 1)',
                 borderWidth: 1
             },
             {
                 label: 'Egg Price',
                 data: eggs,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(255, 255, 0, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 1)',
                 borderWidth: 1
             },
             {
                 label: 'Gas Price',
                 data: gas,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(128, 128, 128, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 1)',
                 borderWidth: 1
             }]
         },
