@@ -22,9 +22,9 @@ class Track(db.Model):
     unfavorable = db.Column(db.Float, nullable=False)
     eggs = db.Column(db.Float, nullable=False)
     gas = db.Column(db.Float, nullable=False)
-    bananas = db.Coloumn(db.Float, nullable=False)
-    coffee = db.Coloumn(db.Float, nullable=False)
-    chocolate = db.Coloumn(db.Float, nullable=False)
+    bananas = db.Column(db.Float, nullable=False)
+    coffee = db.Column(db.Float, nullable=False)
+    chocolate = db.Column(db.Float, nullable=False)
 
     def to_dict(self):
         return {"id": self.id, "date": self.date, "favorable": self.favorable, "unfavorable": self.unfavorable, "eggs": self.eggs, "gas": self.gas, "bananas": self.bananas, "coffee": self.coffee, "chocolate": self.chocolate}
