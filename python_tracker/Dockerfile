@@ -1,5 +1,5 @@
-from python:3.11
-MAINTAINER Luke McEwen
+FROM python:3.11
+LABEL Luke McEwen
 
 ADD . .
 RUN pip install -r requirements.txt
