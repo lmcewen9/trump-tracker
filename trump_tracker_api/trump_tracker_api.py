@@ -18,13 +18,13 @@ db = SQLAlchemy(app)
 class Track(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, nullable=False)
-    favorable = db.Column(db.Float, nullable=False)
-    unfavorable = db.Column(db.Float, nullable=False)
-    eggs = db.Column(db.Float, nullable=False)
-    gas = db.Column(db.Float, nullable=False)
-    bananas = db.Column(db.Float, nullable=False)
-    coffee = db.Column(db.Float, nullable=False)
-    chocolate = db.Column(db.Float, nullable=False)
+    favorable = db.Column(db.Float)
+    unfavorable = db.Column(db.Float)
+    eggs = db.Column(db.Float)
+    gas = db.Column(db.Float)
+    bananas = db.Column(db.Float)
+    coffee = db.Column(db.Float)
+    chocolate = db.Column(db.Float)
 
     def to_dict(self):
         return {"id": self.id, "date": self.date, "favorable": self.favorable, "unfavorable": self.unfavorable, "eggs": self.eggs, "gas": self.gas, "bananas": self.bananas, "coffee": self.coffee, "chocolate": self.chocolate}
