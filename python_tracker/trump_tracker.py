@@ -20,9 +20,12 @@ def main():
     polls = grap_favorable()
     eggs = grab_commodities("https://fred.stlouisfed.org/series/APU0000708111")
     gas = grab_commodities("https://fred.stlouisfed.org/series/APU000074714")
+    bananas = grab_commodities("https://fred.stlouisfed.org/series/APU0000711211")
+    coffee = grab_commodities("https://fred.stlouisfed.org/series/APU0000717311")
+    chocolate = grab_commodities("https://fred.stlouisfed.org/series/APU0000702421")
 
     url = getenv('URL')
-    data = {"date": polls[0], "favorable": polls[1], "unfavorable": polls[2], "eggs": eggs, "gas": gas}
+    data = {"date": polls[0], "favorable": polls[1], "unfavorable": polls[2], "eggs": eggs, "gas": gas, "bananas": bananas, "coffee": coffee, "chocolate": chocolate}
     requests.post(url, json=data)
 
 if __name__ == "__main__":

@@ -21,6 +21,9 @@ async function createGraph(){
     const unfavorable = data.map(item => item.unfavorable);
     const eggs = data.map(item => item.eggs);
     const gas = data.map(item => item.gas);
+    const bananas = data.map(item => item.bananas);
+    const coffee = data.map(item => item.coffee);
+    const chocolate = data.map(item => item.chocolate);
 
     const ctx = document.getElementById('myChart').getContext('2d');
     new Chart(ctx, {
@@ -44,7 +47,7 @@ async function createGraph(){
             {
                 label: 'Egg Price',
                 data: eggs,
-                backgroundColor: 'rgba(255, 255, 0, 0.5)',
+                backgroundColor: 'rgba(255, 0, 255, 0.5)',
                 borderColor: 'rgba(0, 0, 0, 1)',
                 borderWidth: 1
             },
@@ -52,6 +55,27 @@ async function createGraph(){
                 label: 'Gas Price',
                 data: gas,
                 backgroundColor: 'rgba(128, 128, 128, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Banana Price',
+                data: bananas,
+                backgroundColor: 'rgba(255, 255, 0, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Coffee Price',
+                data: coffee,
+                backgroundColor: 'rgba(128, 0, 128, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Chocolate Price',
+                data: chocolate,
+                backgroundColor: 'rgba(150, 75, 0, 0.5)',
                 borderColor: 'rgba(0, 0, 0, 1)',
                 borderWidth: 1
             }]
