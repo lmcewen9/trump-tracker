@@ -47,7 +47,7 @@ async function createGraph(){
             {
                 label: 'Egg Price',
                 data: eggs,
-                backgroundColor: 'rgba(255, 0, 255, 0.5)',
+                backgroundColor: 'rgba(255, 165, 0, 0.5)',
                 borderColor: 'rgba(0, 0, 0, 1)',
                 borderWidth: 1
             },
