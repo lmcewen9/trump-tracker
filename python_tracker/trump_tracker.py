@@ -1,7 +1,6 @@
 from os import getenv
 from bs4 import BeautifulSoup
 import requests
-from re import split
 
 def grap_favorable():
     req = requests.get("https://projects.fivethirtyeight.com/polls/favorability/donald-trump/").text
