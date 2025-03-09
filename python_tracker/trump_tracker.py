@@ -3,10 +3,10 @@ from bs4 import BeautifulSoup
 import requests
 from datetime import datetime
 
-def grap_favorable():
-    req = requests.get("https://projects.fivethirtyeight.com/polls/favorability/donald-trump/").text
+def grab_favorable():
+    req = requests.get("https://www.realclearpolling.com/polls/approval/donald-trump/approval-rating").text
     soup = BeautifulSoup(req, "html.parser")
-    favorable, unfavorable = [favorability.find(class_="heat-map").text.replace("%", "") for favorability in soup.find_all(class_="value hide-mobile")[:2]]
+    favorable, unfavorable = [favorability.text.replace("%", "") for favorability in soup.find_all(class_="text-h1 min-[1025px]:font-arialc font-hnc leading-none lg:!text-[56px] !text-[40px]")]
     return favorable, unfavorable
 
 def grab_commodities(url):
@@ -17,7 +17,7 @@ def grab_commodities(url):
 
 def main():
     date = datetime.now().strftime("%m/%d/%y")
-    favorable, unfavorable = grap_favorable()
+    favorable, unfavorable = grab_favorable()
     eggs = grab_commodities("https://fred.stlouisfed.org/series/APU0000708111")
     gas = grab_commodities("https://fred.stlouisfed.org/series/APU000074714")
     bananas = grab_commodities("https://fred.stlouisfed.org/series/APU0000711211")
