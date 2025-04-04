@@ -4,6 +4,9 @@ from os import getenv
 
 app = Flask(__name__)
 
+ALLOWED_ORIGINS = ["https://www.lukemcewen.com",
+                    "https://lukemcewen.com"]
+
 user = getenv('DB_USER')
 password = getenv('DB_PASSWORD')
 host = getenv('DB_HOST')
@@ -29,7 +32,17 @@ class Track(db.Model):
     def to_dict(self):
         return {"id": self.id, "date": self.date, "favorable": self.favorable, "unfavorable": self.unfavorable, "eggs": self.eggs, "gas": self.gas, "bananas": self.bananas, "coffee": self.coffee, "chocolate": self.chocolate}
 
-    # object = {"data" : [to_dict]}
+@app.after_request
+def add_cors_headers(response):
+    origin = request.headers.get("Origin")
+    if origin in ALLOWED_ORIGINS:
+        response.headers.add("Access-Control-Allow-Origin", origin)
+        response.headers.add("Vary", "Origin")
+    response.headers.add("Access-Control-Allow-Headers", "Content-Type,Authorization")
+    response.headers.add("Access-Control-Allow-Methods", "GET")
+    return response
+
+
 @app.route('/track', methods=['GET'])
 def get_track():
     tracks = Track.query.all()
