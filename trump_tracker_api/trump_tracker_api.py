@@ -47,7 +47,6 @@ def add_cors_headers(response):
 def get_track():
     tracks = Track.query.all()
     response = jsonify([track.to_dict() for track in tracks])
-    response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
 @app.route('/track', methods=['POST'])
